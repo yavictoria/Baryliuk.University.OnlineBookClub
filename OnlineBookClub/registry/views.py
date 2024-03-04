@@ -8,13 +8,21 @@ from django.contrib.auth.forms import AuthenticationForm
 def register_request(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)
+        print("registration form is here")
         if form.is_valid():
+            print("registration form is valid")
             user = form.save()
             login(request, user)
             messages.success(request, "Registration successful.")
             return redirect("main:home")
-        messages.error(request, "Unsuccessful registration. Invalid information.")
-    form = NewUserForm()
+        else:
+            for field, errors in form.errors.items():
+                for error in errors:
+                    messages.error(request, f"{field}: {error}")
+            return render(request, "registry/register.html", {"register_form": form})
+         #messages.error(request, "Unsuccessful registration. Invalid information.")
+    else:
+        form = NewUserForm()
     return render(request=request, template_name="registry/register.html", context={"register_form": form})
 
 
