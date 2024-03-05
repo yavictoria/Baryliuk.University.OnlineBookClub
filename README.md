@@ -12,8 +12,7 @@ https://t.me/@kkateerrina
 - u need to open PersonalProject in PyCharm
 - change folder in terminal: cd OnlineBookClub
 - run server: python manage.py runserver
-- open the link:  http://127.0.0.1:8000/
-
+- open the link:  http://127.0.0.1:8000/  
   That's all)
 
 
