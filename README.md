@@ -15,8 +15,6 @@ https://t.me/@kkateerrina
 - open the link:  http://127.0.0.1:8000/  
   That's all)
 
-
-
 ## Project Documentation
 Add your project documentation here.
 
@@ -30,3 +28,9 @@ Add your task decomposition here.
 - Develop basic front-end layout for landing page :heavy_check_mark:
 - Set up Continuous Integration/Continuous Delivery pipeline
 
+### Week 2:
+- Implement feature: Welcome Email functionality
+- Design database schema for user profiles and authentication
+- Define API endpoints for user registration and authentication
+- Integrate Google OAuth 2.0 for authentication
+- Write unit tests for user authentication endpoints
