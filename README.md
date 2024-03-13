@@ -19,7 +19,7 @@ https://t.me/@kkateerrina
 Add your project documentation here.
 
 ## Project Task Decomposition
-Add your task decomposition here.
+• User Registration: Users can register using their Google account via OAuth 2.0, ensuring a seamless and secure sign-up process.
 
 ### Week 1:
 - Implement feature: User Registration with Google OAuth 2.0 :heavy_check_mark:
