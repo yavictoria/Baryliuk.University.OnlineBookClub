@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['onlinebookclub.azurewebsites.net', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://onlinebookclub.azurewebsites.net']
+
 
 # Application definition
 
