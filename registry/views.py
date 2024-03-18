@@ -3,6 +3,23 @@ from .forms import NewUserForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import send_mail
+from django.conf import  settings
+from django.contrib.auth.decorators import login_required
+
+
+@login_required
+def welcome_email(request):
+    username = request.user
+    print("username = ", username)
+    email = request.user.email
+    print("email = ", email)
+    subject = 'Welcome to our Book Club!'
+    message = f'Hi {username}, thank you for choosing our book club. Now you can be the part of a reading family! '
+    from_email = settings.EMAIL_HOST_USER
+    recipient_list = [email]
+    send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+    return redirect("main:home")
 
 
 def register_request(request):
@@ -49,3 +66,5 @@ def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.")
 	return redirect("main:home")
+
+
