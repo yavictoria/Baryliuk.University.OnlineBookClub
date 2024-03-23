@@ -51,7 +51,9 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'main',
-    'registry'
+    'registry',
+    'forum',
+    'fontawesomefree',
 ]
  ### NEEEEW
 
@@ -177,3 +179,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'vasyabarilyuk1427@gmail.com'
 EMAIL_HOST_PASSWORD = 'bjtsvjnnmjypxmrb'
+
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_COOKIE_SECURE = True  # Set to True if using HTTPS in production

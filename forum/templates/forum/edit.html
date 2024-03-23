@@ -1,0 +1,10 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <h1>Edit</h1>
+    <form method="post" enctype="multipart/form-data"  >
+        {% include 'forum/form.html' %}
+        <button type="submit" class="btn btn-outline-success">Зберегти</button>
+        <span> {{error}}</span>
+    </form>
+{% endblock %}

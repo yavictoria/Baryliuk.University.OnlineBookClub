@@ -1,0 +1,60 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+{% if error %}
+<span class="alert alert-danger row mt-2">Error! {{error}}</span>
+{% endif %}
+<style>
+    .details {
+       display: flex;
+
+   }
+
+   .date {
+       font-style: italic; /* Add italic style to date */
+   }
+</style>
+<div class="card ">
+    <div class="card-header bg-dark text-white details">
+        <div class="col-10">
+            <p for="name">{{ forum.name }}</p>
+        </div>
+        <div class="col-2">
+            <p class="date" for="date_created">{{ forum.date_created }}</p>
+        </div>
+    </div>
+    <div class="card-body position-relative">
+        <div>
+            <h2 class="card-title" style="margin-left: 20px;" for="topic"> {{forum.topic}} </h2>
+            <h5 class="card-text" style="margin-left: 20px;" for="description"> {{forum.description}} </h5>
+        </div>
+        <div class="row">
+            <div class="col-2 text-right mt-4">
+                <a href="{% url 'forum:edit' id=forum.id %}" class="btn btn-outline-success"><i
+                        class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{% url 'forum:forum_delete' id=forum.id %}" class="btn btn-outline-danger"><i
+                        class="fa-solid fa-trash-can"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="forum_id" value="{{forum.id}}">
+    <div class="form-group mb-2">
+        <label for="discuss"> discuss: </label>
+        {{ form.discuss }}
+    </div>
+    <button type="submit" formaction="discussion_create" class="btn btn-dark mt-4">Comment</button>
+</form>
+
+ <h5> discussion: </h5>
+       {% for el in discussions_list %}
+        <div class="row">
+                <div class="btn btn-light col-4 mb-2" > {{ el.name}}  </div>
+                <div class="btn btn-light col-8 mb-2" > {{ el.discuss}}  </div>
+        </div>
+    {%endfor%}
+
+{% endblock %}
