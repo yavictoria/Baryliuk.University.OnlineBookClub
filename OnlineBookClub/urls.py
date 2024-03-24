@@ -22,5 +22,7 @@ urlpatterns = [
     path('', include('main.urls', namespace='main')),
     path('registry/', include('registry.urls', namespace='registry')),
     path('', include('allauth.urls')), #most important
+    path('forum/', include('forum.urls', namespace='forum')),
+
 
 ]

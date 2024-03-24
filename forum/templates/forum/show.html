@@ -1,0 +1,85 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+{% if error %}
+<span class="alert alert-danger row mt-2">Error! {{error}}</span>
+{% endif %}
+<style>
+    .details {
+       display: flex;
+
+   }
+
+   .date {
+       font-style: italic; /* Add italic style to date */
+   }
+</style>
+<div class="card ">
+    <div class="card-header bg-dark text-white details">
+        <div class="col-10">
+            <p for="name">{{ forum.name }}</p>
+        </div>
+        <div class="col- 2">
+            <p class="date" for="date_created">{{ forum.date_created }}</p>
+        </div>
+    </div>
+    <div class="card-body position-relative">
+        <div>
+            <h2 class="card-title" style="margin-left: 20px;" for="topic"> {{forum.topic}} </h2>
+            <h5 class="card-text" style="margin-left: 20px;" for="description"> {{forum.description}} </h5>
+        </div>
+        <div class="row">
+            <div class="col-2 text-right mt-4">
+                {% if user == forum.name %}
+                <a href="{% url 'forum:edit' id=forum.id %}" class="btn btn-outline-success"><i
+                        class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{% url 'forum:forum_delete' id=forum.id %}" class="btn btn-outline-danger"><i
+                        class="fa-solid fa-trash-can"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="forum_id" value="{{forum.id}}">
+    <div class="row mt-4 mb-4">
+        <div class="form-group col-10">
+            {{ form.discuss }}
+        </div>
+        <div class="col-2 text-right">
+            <button type="submit" formaction="discussion_create" class="btn btn-dark">Comment</button>
+        </div>
+    </div>
+</form>
+
+
+<h3>Comments</h3>
+        {% for el in discussions_list %}
+<div class="container col-11">
+
+        <div class="card justify-content-center mt-3 mb-3">
+            <div class="card-header bg-dark bg-gradient text-white details">
+                <div class="col-9">
+                    <p for="name">{{ el.name }}</p>
+                </div>
+                <div class="col-3">
+                    <p class="date" for="date_created">{{ el.date_created }}</p>
+                </div>
+            </div>
+            <div class="card-body position-relative">
+                <div>
+                    <h6 class="card-text" style="margin-left: 20px;" for="discuss"> {{el.discuss}} </h6>
+                     {% if user == el.name %}
+                    <a href="{% url 'forum:discussion_delete' id=el.id %}" class="btn btn-outline-danger mt-4"
+                       style="margin-left: 20px;"> <i class="fa-solid fa-trash-can"></i></a>
+                        {% endif %}
+                </div>
+            </div>
+        </div>
+
+</div>
+{%endfor%}
+
+{% endblock %}
