@@ -121,4 +121,24 @@ def discussion_create(request):
         'name': name,
         'date_created': date_created
     }
-    return render(request, 'forum/forum_create.html', context)
+    return render(request, 'forum/show.html', context)
+
+
+# delete discussion
+def discussion_delete(request, id):
+    print(f"=== forum, action: discussion_delete === ")
+    print(f"id: ", id)
+
+    try:
+        obj = None
+        obj = Discussion.objects.get(id=id)
+        forum_id = obj.forum.id
+        print(f"forum: {forum_id}")
+        obj.delete()
+    except (Exception) as e:
+        keeper_service.push("error", str(e))
+        print(f"Error: {e}")
+
+    return redirect('forum:show',id=forum_id)
+
+
