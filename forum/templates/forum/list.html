@@ -29,9 +29,11 @@
     <div class="col-10">
         <h1>Discussion forum</h1>
     </div>
+    {% if user.is_authenticated %}
     <div class="col-2">
         <a href="{% url 'forum:forum_create'%}" class="btn btn-outline-success">Create new forum</a>
     </div>
+    {% endif %}
 
 </div>
 {% if error %}
