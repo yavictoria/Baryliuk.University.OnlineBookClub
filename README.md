@@ -23,14 +23,29 @@ Add your project documentation here.
 
 ### Week 1:
 - Implement feature: User Registration with Google OAuth 2.0 :heavy_check_mark:
-- Set up Azure environment for project deployment
+- Set up Azure environment for project deployment :heavy_check_mark:
 - Create README.md file with Getting Started documentation :heavy_check_mark:
 - Develop basic front-end layout for landing page :heavy_check_mark:
-- Set up Continuous Integration/Continuous Delivery pipeline
+- Set up Continuous Integration/Continuous Delivery pipeline :heavy_check_mark:
 
 ### Week 2:
-- Implement feature: Welcome Email functionality
-- Design database schema for user profiles and authentication
-- Define API endpoints for user registration and authentication
-- Integrate Google OAuth 2.0 for authentication
-- Write unit tests for user authentication endpoints
+- Implement feature: Welcome Email functionality :heavy_check_mark:
+- Design database schema for user profiles and authentication :heavy_check_mark:
+- Define API endpoints for user registration and authentication :heavy_check_mark:
+- Integrate Google OAuth 2.0 for authentication :heavy_check_mark:
+- Write unit tests for user authentication endpoints :heavy_check_mark:
+
+### Week 3:
+- Implement feature: Discussion Forums :heavy_check_mark:
+- Develop front-end components for forum threads and replies :heavy_check_mark:
+- Create RESTful API endpoints for forum CRUD operations :heavy_check_mark:
+- Implement user authentication and authorization for forum access :heavy_check_mark:
+- Conduct unit tests for forum functionality
+
+### Week 4:
+- Implement feature: Reading Groups :heavy_check_mark:
+- Design database schema for reading groups and memberships :heavy_check_mark:
+- Develop front-end interface for creating and joining reading groups :heavy_check_mark:
+- Define API endpoints for managing reading groups
+- Write unit tests for reading group functionalities
+
