@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'registry',
     'forum',
     'fontawesomefree',
+    'group'
 ]
  ### NEEEEW
 

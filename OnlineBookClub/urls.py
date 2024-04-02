@@ -23,6 +23,7 @@ urlpatterns = [
     path('registry/', include('registry.urls', namespace='registry')),
     path('', include('allauth.urls')), #most important
     path('forum/', include('forum.urls', namespace='forum')),
+    path('group/', include('group.urls', namespace='group')),
 
 
 ]
