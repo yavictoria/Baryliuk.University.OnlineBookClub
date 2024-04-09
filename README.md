@@ -46,6 +46,19 @@ Add your project documentation here.
 - Implement feature: Reading Groups :heavy_check_mark:
 - Design database schema for reading groups and memberships :heavy_check_mark:
 - Develop front-end interface for creating and joining reading groups :heavy_check_mark:
-- Define API endpoints for managing reading groups
-- Write unit tests for reading group functionalities
+- Define API endpoints for managing reading groups :heavy_check_mark:
+- Write unit tests for reading group functionalities 
 
+### Week 5:
+- Implement feature: Author Q&A Sessions 
+- Set up infrastructure for hosting live Q&A sessions
+- Develop front-end interface for scheduling and participating in Q&A sessions
+- Define API endpoints for managing author sessions and user participation
+- Conduct unit tests for Q&A session functionalities
+
+### Week 6:
+- Implement feature: User Profile Management :heavy_check_mark:
+- Design database schema for user profiles and preferences :heavy_check_mark:
+- Develop front-end interface for editing user profiles :heavy_check_mark:
+- Define API endpoints for updating user information :heavy_check_mark:
+- Write unit tests for user profile functionalities
