@@ -56,6 +56,10 @@
                     <div class=" d-flex" style="color: gray">
 
                         {% if user.is_authenticated %}
+                        <span class="nav-item m-1" >
+                        <a class="nav-link active" aria-current="page" style="margin-right: 10px;"
+                           href="{% url 'user:show' id=user.id %}"><i class="fa-regular fa-user"></i></a>
+                    </span>
 
                         <span class="nav-item m-1">
                             <a class="nav-link active" aria-current="page" href="{% url 'registry:logout' %}">Logout</a>
