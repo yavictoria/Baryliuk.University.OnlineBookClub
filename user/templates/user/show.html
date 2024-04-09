@@ -1,0 +1,51 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+
+{% if error %}
+<span class="alert alert-danger row mt-2">Error! {{error}}</span>
+{% endif %}
+
+<div class="row ">
+    <div class="m-2 col-3">
+        <p>
+            {% if profile_u.images %}
+            <img src="{{ profile_u.images.url }}" alt="image" width="230" height="345">
+              {% else %}
+            {% if image_profile %}
+            <img src="{{image_profile}}" alt="user_profile image" width="200" height="200">
+            {% endif %}
+            {% endif %}
+        </p>
+    </div>
+    <div class="m-3 col-8">
+    <h2 style="font-size: 24px;"> {{ profile_u.user.username}} </h2>
+    <h5 style="font-style: italic;">{{profile_u.user.first_name}}  {{ profile_u.user.last_name}}</h5>
+    <h5>Author: {{profile_u.is_author}}</h5>
+    <h6 style="font-weight: bold;"> email: {{ profile_u.user.email}} </h6>
+    <h7 style="color: purple;">#{{profile_u.interest}}</h7>
+    <h6 style="font-size: 18px;">about myself: {{profile_u.description}}</h6>
+    <h4 style="text-decoration: underline;">Groups:</h4>
+    <div class="container">
+        <div class="row justify-content-left col-5">
+            {% for el in groups_list %}
+            <a href="{% url 'group:show' id=el.id %}" class="btn btn-outline-dark mt-3 mb-3">
+                <div class="forum-item">
+                    <p class="topic" style="text-align: left; font-size: 20px; font-weight: bold;">{{ el.topic }}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+<a href="{% url 'user:edit' id=user.id %}" class="btn btn-outline-success">
+    <i class="fa-regular fa-pen-to-square"></i>
+</a>
+<a href="{% url 'user:delete' id=user.id %}" class="btn btn-outline-danger">
+    <i class="fa-solid fa-trash-can"></i></a>
+
+
+
+{% endblock %}
