@@ -19,11 +19,11 @@ https://t.me/@kkateerrina
 Add your project documentation here.
 
 ## Project Task Decomposition
-• User Registration: Users can register using their Google account via OAuth 2.0, ensuring a seamless and secure sign-up process.
-• Welcome Email: Upon successful registration or first sign-in with Google Account, users receive a personalized welcome message in their email inbox, providing a warm introduction to the platform.
-• Discussion Forums: Engage in vibrant discussions about various literary works, genres, and themes within dedicated discussion forums.
-• Reading Groups: Join or create reading groups based on specific interests, allowing members to read and discuss books together in a communal setting.
-• User Profile Management: Users can manage their profiles, update personal information, and customize preferences to enhance their experience on the platform.
+- User Registration: Users can register using their Google account via OAuth 2.0, ensuring a seamless and secure sign-up process.
+- Welcome Email: Upon successful registration or first sign-in with Google Account, users receive a personalized welcome message in their email inbox, providing a warm introduction to the platform.
+- Discussion Forums: Engage in vibrant discussions about various literary works, genres, and themes within dedicated discussion forums.
+- Reading Groups: Join or create reading groups based on specific interests, allowing members to read and discuss books together in a communal setting.
+- User Profile Management: Users can manage their profiles, update personal information, and customize preferences to enhance their experience on the platform.
 
 
 
