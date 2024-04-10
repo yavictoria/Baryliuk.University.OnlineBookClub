@@ -26,6 +26,7 @@ Add your project documentation here.
 • User Profile Management: Users can manage their profiles, update personal information, and customize preferences to enhance their experience on the platform.
 
 
+
 ### Week 1:
 - Implement feature: User Registration with Google OAuth 2.0 :heavy_check_mark:
 - Set up Azure environment for project deployment :heavy_check_mark:
