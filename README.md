@@ -56,9 +56,9 @@ Add your project documentation here.
 - Write unit tests for reading group functionalities 
 
 ### Week 5:
-- Implement feature: Author Q&A Sessions 
-- Set up infrastructure for hosting live Q&A sessions
-- Develop front-end interface for scheduling and participating in Q&A sessions
+- Implement feature: Author Q&A Sessions :heavy_check_mark:
+- Set up infrastructure for hosting live Q&A sessions :heavy_check_mark:
+- Develop front-end interface for scheduling and participating in Q&A sessions :heavy_check_mark:
 - Define API endpoints for managing author sessions and user participation
 - Conduct unit tests for Q&A session functionalities
 
