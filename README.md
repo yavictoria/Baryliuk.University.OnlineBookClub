@@ -23,6 +23,7 @@ Add your project documentation here.
 - Welcome Email: Upon successful registration or first sign-in with Google Account, users receive a personalized welcome message in their email inbox, providing a warm introduction to the platform.
 - Discussion Forums: Engage in vibrant discussions about various literary works, genres, and themes within dedicated discussion forums.
 - Reading Groups: Join or create reading groups based on specific interests, allowing members to read and discuss books together in a communal setting.
+- Author Q&A Sessions: Participate in live Q&A sessions with authors, providing an exclusive opportunity for users to interact directly with their favorite writers.
 - User Profile Management: Users can manage their profiles, update personal information, and customize preferences to enhance their experience on the platform.
 
 
