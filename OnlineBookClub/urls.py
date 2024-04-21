@@ -27,6 +27,7 @@ urlpatterns = [
     path('forum/', include('forum.urls', namespace='forum')),
     path('group/', include('group.urls', namespace='group')),
     path('user/', include('user.urls', namespace='user')),
+    path('session/', include('session.urls', namespace='session')),
 
 
 ]
