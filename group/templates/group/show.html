@@ -64,7 +64,7 @@
 
 <div class="mt-4">
 {% if user.is_authenticated %}
-{% if is_group_member == True %}
+{% if is_group_member == True or user == group.creator %}
 {% if comment_text != ''  and comment_creater != ''%}
 
     <div class="card mt-3 col-10">
