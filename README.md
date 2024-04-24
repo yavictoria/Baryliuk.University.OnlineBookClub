@@ -69,3 +69,11 @@ Add your project documentation here.
 - Develop front-end interface for editing user profiles :heavy_check_mark:
 - Define API endpoints for updating user information :heavy_check_mark:
 - Write unit tests for user profile functionalities
+
+### Week 7:
+- Implement feature: Book Recommendations  :heavy_check_mark:
+- Integrate recommendation engine for personalized book suggestions  :heavy_check_mark:
+- Develop front-end component for displaying book recommendations  :heavy_check_mark:
+- Define API endpoints for retrieving recommended books based on user preferences  :heavy_check_mark:
+- Conduct unit tests for recommendation functionalities
+
