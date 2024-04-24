@@ -28,6 +28,7 @@ urlpatterns = [
     path('group/', include('group.urls', namespace='group')),
     path('user/', include('user.urls', namespace='user')),
     path('session/', include('session.urls', namespace='session')),
+    path('books/', include('books.urls', namespace='books')),
 
 
 ]

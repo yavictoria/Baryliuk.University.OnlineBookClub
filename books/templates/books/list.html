@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+<h1>Popular books</h1>
+<div class="row ">
+{% for el in instance_list%}
+    <a href="{% url 'books:a_book' id=el.id %}" class="btn btn-outline-dark col-2">
+<div class="card" style="width: 10rem; height: 20rem;">
+    {% if el.images %}
+    <img src="{{ el.images.url }}" class="card-img-top" alt="image" height="225">
+    {% endif %}
+    <div class="card-body" >
+        <p class="card-text" >{{ el.name}}</p>
+    </div>
+</div>
+</a>
+{%endfor%}
+</div>
+ {% if user.is_authenticated  %}
+<h1 class="mt-4"> you might like</h1>
+<div class="row ">
+{% for el in user_books%}
+    <a href="{% url 'books:a_book' id=el.id %}" class="btn btn-outline-dark col-2">
+<div class="card" style="width: 10rem; height: 20rem;">
+    {% if el.images %}
+    <img src="{{ el.images.url }}" class="card-img-top" alt="image" height="225">
+    {% endif %}
+    <div class="card-body" >
+        <p class="card-text" >{{ el.name}}</p>
+    </div>
+</div>
+</a>
+{%endfor%}
+</div>
+  {% endif %}
+{% endblock %}

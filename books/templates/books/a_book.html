@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+{% if error %}
+<span class="alert alert-danger row mt-2">Error! {{error}}</span>
+{% endif %}
+<div class="row ">
+    <div class="m-2 col-3">
+        <p>
+            {% if book.images %}
+            <img src="{{ book.images.url }}" alt="image" width="230" height="345">
+            {% endif %}
+        </p>
+        <form action="{% url 'books:add_like' book.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+               <i class="fa-regular fa-heart"></i>
+            </button>
+        </form>
+        <span>{{ book.like.count }}</span>
+    </div>
+    <div class=" m-3 col-8">
+        <h2> {{ book.name}} <h5>{{ book.year}}</h5></h2>
+        <h5> written by {{ book.author }} </h5>
+        <h6 class="text-secondary"> {{ book.description}} </h6>
+        <div class="form-inline">
+            {% for el in interest_names %}
+                <div class="btn btn-light" > #{{ el}}  </div>
+            {%endfor%}
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'fontawesomefree',
     'group',
     'user',
-    'session'
+    'session',
+    'books'
 ]
  ### NEEEEW
 
