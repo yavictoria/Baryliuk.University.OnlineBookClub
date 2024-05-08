@@ -77,3 +77,25 @@ Add your project documentation here.
 - Define API endpoints for retrieving recommended books based on user preferences  :heavy_check_mark:
 - Conduct unit tests for recommendation functionalities
 
+### Week 8:
+- Implement feature: Event Calendar
+- Develop calendar component for displaying upcoming events
+- Define API endpoints for fetching event data
+- Integrate event notifications for user subscriptions
+- Write unit tests for event calendar functionalities
+
+### Week 9:
+- Implement feature: Notification System
+- Design real-time notification system for user interactions
+- Develop front-end interface for displaying notifications
+- Define API endpoints for managing notifications
+- Conduct unit tests for notification functionalities
+
+### Week 10:
+- Implement feature: Admin Dashboard :heavy_check_mark:
+- Design dashboard interface for administrative tasks :heavy_check_mark:
+- Define admin roles and permissions :heavy_check_mark:
+- Develop API endpoints for admin functionalities :heavy_check_mark:
+- Write unit tests for admin dashboard functionalities
+
+
