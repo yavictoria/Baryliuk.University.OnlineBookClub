@@ -29,6 +29,7 @@ urlpatterns = [
     path('user/', include('user.urls', namespace='user')),
     path('session/', include('session.urls', namespace='session')),
     path('books/', include('books.urls', namespace='books')),
+    path('manager/', include('manager.urls', namespace='manager')),
 
 
 ]

@@ -1,0 +1,91 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+{% if error %}
+<span class="alert alert-danger row mt-2">Error! {{error}}</span>
+{% endif %}
+
+<style>
+    .details {
+       display: flex;
+
+   }
+
+   .date {
+       font-style: italic; /* Add italic style to date */
+   }
+</style>
+
+<div class="card ">
+    <div class="card-header bg-dark text-white ">
+        <p for="creator">Creater: {{ group.creator }}</p>
+
+        {% if user.is_authenticated and user != group.creator%}
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="group_id" value="{{group.id}}">
+            <input type="hidden" name="user_id" value="{{user.id}}">
+            <div class="row mt-4 mb-4">
+
+            </div>
+        </form>
+
+        {% endif %}
+
+    </div>
+    <div class="card-body position-relative">
+        <div>
+            <h2 class="card-title" style="margin-left: 20px;" for="topic"> {{group.topic}} </h2>
+            <h6 class="date" style="margin-left: 20px;" for="interest">#{{ group.interest }}</h6>
+            <h5 class="card-text" style="margin-left: 20px;" for="description"> {{group.description}} </h5>
+        </div>
+        <div class="row">
+            <div class="col-2 text-right mt-4">
+                {% if user.is_staff %}
+                <a href="{% url 'group:edit' id=group.id %}" class="btn btn-outline-success"><i
+                        class="fa-regular fa-pen-to-square"></i></a>
+                <a href="{% url 'group:group_delete' id=group.id %}" class="btn btn-outline-danger"><i
+                        class="fa-solid fa-trash-can"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<h3>Comments</h3>
+{% for el in comments_list %}
+<div class="container col-11">
+
+    <div class="card justify-content-center mt-3 mb-3">
+        <div class="card-header bg-dark bg-gradient text-white details">
+            <div class="col-9">
+                <p for="name"> {{ el.user_id }}
+                    {% if el.parent_comment != None%}
+                    answer {{el.parent_comment.user_id}}: {{el.parent_comment}}
+                    {% endif%}
+                </p>
+            </div>
+            <div class="col-3">
+                <p class="date" for="date_created">{{ el.date_created }}</p>
+            </div>
+        </div>
+        <div class="card-body position-relative">
+            <div>
+                <h6 class="card-text" style="margin-left: 20px;" for="discuss"> {{el.comment}} </h6>
+                {% if user.is_staff %}
+                <a href="{% url 'group:comment_delete' id=el.id %}" class="btn btn-outline-danger mt-4"
+                   style="margin-left: 20px;"> <i class="fa-solid fa-trash-can"></i></a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{%endfor%}
+
+
+{% endblock %}

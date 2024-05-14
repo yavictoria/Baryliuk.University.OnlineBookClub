@@ -59,7 +59,8 @@ INSTALLED_APPS = [
     'group',
     'user',
     'session',
-    'books'
+    'books',
+    'manager',
 ]
  ### NEEEEW
 

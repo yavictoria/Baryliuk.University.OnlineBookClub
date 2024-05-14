@@ -3,6 +3,7 @@ from .models import *
 from .forms import *
 from main.keeper_service import keeper_service
 from django.utils import timezone
+from manager.views import group_show
 
 
 # Create your views here.
@@ -78,6 +79,7 @@ def group_create(request):
 def group_delete(request, id):
     print(f"=== group, action: group_delete === ")
     print(f"id: ", id)
+    user = request.user
 
     try:
         obj = None
@@ -87,6 +89,9 @@ def group_delete(request, id):
     except (Exception) as e:
         keeper_service.push("error", str(e))
         print(f"Error: {e}")
+
+    if user.is_staff:
+        return redirect('manager:group_list', id=group.id)
 
     return redirect('group:list')
 
@@ -98,6 +103,7 @@ def edit(request, id):
     print(f"method: ", request.method)
     error = ''
     cur_action = "edit"
+    user = request.user
 
     group = get_object_or_404(Group, id=id)
 
@@ -107,6 +113,8 @@ def edit(request, id):
         form = CreateGroup(request.POST, request.FILES, instance=group)
         if form.is_valid():
             form.save()
+            if user.is_staff:
+                return redirect('manager:group_show', id=group.id)
             return redirect('group:show', id=group.id)  # Redirect to forum detail view
         else:
             error = 'Помилки при заповненні форми'
@@ -203,6 +211,7 @@ def comment_create(request):
 def comment_delete(request, id):
     print(f"=== forum, action: discussion_delete === ")
     print(f"id: ", id)
+    user = request.user
 
     try:
         obj = None
@@ -214,7 +223,11 @@ def comment_delete(request, id):
         keeper_service.push("error", str(e))
         print(f"Error: {e}")
 
-    return redirect('group:show',id=group_id)
+    if user.is_staff:
+        return redirect('manager:group_show', id=group_id)
+    else:
+
+        return redirect('group:show',id=group_id)
 
 
 

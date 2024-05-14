@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+
+{% block content %}
+<div class="row mb-3 ">
+    <div class="col-10">
+        <h1>Admin dashboard</h1>
+    </div>
+</div>
+
+{% if error %}
+<span class="alert alert-danger mt-2"> {{error}}</span>
+{% endif %}
+
+<div class="container col-10">
+    <div class="row justify-content-center">
+        <a href="{% url 'manager:group_list' %}" class="btn btn-outline-dark mt-3 mb-3">
+            Reading groups
+        </a>
+    </div>
+    <div class="row justify-content-center">
+        <a href="{% url 'forum:list' %}" class="btn btn-outline-dark mt-3 mb-3">
+            Discussion forums
+        </a>
+    </div>
+    <div class="row justify-content-center">
+        <a href="{% url 'manager:users_list' %}" class="btn btn-outline-dark mt-3 mb-3">
+            Users
+        </a>
+    </div>
+</div>
+{% endblock %}

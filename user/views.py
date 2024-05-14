@@ -79,6 +79,8 @@ def edit(request, id):
     else:
         form = ProfileUserForm(instance=profile_u)
 
+
+
     return render(request, 'user/edit.html',
                   {'form': form, 'error': error, 'id': id,
                    'image_url': image_url, 'cur_action': cur_action})
@@ -87,6 +89,7 @@ def edit(request, id):
 def delete(request, id):
     print(f"=== user, action: delete === ")
     print(f"id: ", id)
+    user = request.user
 
     try:
         obj = None
@@ -98,5 +101,7 @@ def delete(request, id):
     except (Exception) as e:
         keeper_service.push("error", str(e))
         print(f"Error: {e}")
+    if user.is_staff:
+        redirect('manager:users_list')
 
     return redirect('main:home')
