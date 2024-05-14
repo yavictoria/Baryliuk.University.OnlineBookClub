@@ -59,6 +59,12 @@
 
                     <div class=" d-flex" style="color: gray">
 
+                        {% if user.is_staff %}
+                        <span class="nav-item m-1" >
+                            <a class="nav-link active" aria-current="page" href="{% url 'manager:home' %}">Admin page</a>
+                        </span>
+                        {% endif %}
+
                         {% if user.is_authenticated %}
                         <span class="nav-item m-1" >
                         <a class="nav-link active" aria-current="page" style="margin-right: 10px;"
@@ -80,6 +86,7 @@
                         </span>
 
                         {% endif %}
+
                     </div>
 
 
