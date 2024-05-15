@@ -98,4 +98,19 @@ Add your project documentation here.
 - Develop API endpoints for admin functionalities :heavy_check_mark:
 - Write unit tests for admin dashboard functionalities
 
+### Week 11:
+- Implement feature: Feedback Mechanism :heavy_check_mark:
+- Develop feedback form for user submissions :heavy_check_mark:
+- Design database schema for storing feedback data :heavy_check_mark:
+- Define API endpoints for collecting and processing feedback :heavy_check_mark:
+- Conduct unit tests for feedback functionalities
+
+### Week 12:
+- Implement feature: Reporting System
+- Develop reporting interface for users to flag inappropriate content
+- Design database schema for storing reported content
+- Define API endpoints for reporting and moderation
+- Write unit tests for reporting system functionalities
+
+
 
