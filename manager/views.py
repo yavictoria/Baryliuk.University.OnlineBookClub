@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from user.models import Profile_user
 from django.contrib.auth.models import User
 from group.models import *
+from main.models import Feedback, Report
 
 # Create your views here.
 def index(request):
@@ -14,6 +15,32 @@ def users_list(request):
 def group_list(request):
     groups_list = Group.objects.order_by('-id')
     return render(request, 'manager/group_list.html', {'instance_list':groups_list})
+
+def feedback_list(request):
+    feedbacks_list = Feedback.objects.order_by('-id')
+    return render(request, 'manager/feedback_list.html', {'instance_list':feedbacks_list})
+def report_list(request):
+    reports_list = Report.objects.order_by('-id')
+    return render(request, 'manager/report_list.html', {'instance_list':reports_list})
+
+
+def report_delete(request, id):
+    print(f"=== report, action: report_delete === ")
+    print(f"id: ", id)
+
+    try:
+        obj = None
+        obj = Report.objects.get(id=id)
+        print(f"obj: {obj}")
+        obj.delete()
+    except (Exception) as e:
+        keeper_service.push("error", str(e))
+        print(f"Error: {e}")
+
+
+    return redirect('manager:report_list')
+
+
 
 def group_show(request, id):
     print(f"=== group, action: show === ")

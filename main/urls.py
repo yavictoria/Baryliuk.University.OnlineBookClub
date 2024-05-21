@@ -7,6 +7,9 @@ app_name = "main"
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('feedback', views.feedback_create, name='feedback'),
+    path('report', views.report_create, name='report'),
+
 ]
 
 
