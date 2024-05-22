@@ -106,11 +106,12 @@ Add your project documentation here.
 - Conduct unit tests for feedback functionalities
 
 ### Week 12:
-- Implement feature: Reporting System
-- Develop reporting interface for users to flag inappropriate content
-- Design database schema for storing reported content
-- Define API endpoints for reporting and moderation
-- Write unit tests for reporting system functionalities
+- Implement feature: Reporting System :heavy_check_mark:
+- Develop reporting interface for users to flag inappropriate content :heavy_check_mark:
+- Design database schema for storing reported content :heavy_check_mark:
+- Define API endpoints for reporting and moderation :heavy_check_mark:
+- Write unit tests for reporting system functionalities :heavy_check_mark:
+- 
 
 
 
