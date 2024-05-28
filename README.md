@@ -113,5 +113,7 @@ Add your project documentation here.
 - Write unit tests for reporting system functionalities :heavy_check_mark:
 - 
 
-
-
+## Anti-Lab 2
+- Barvinskyi
+- [Project](https://github.com/VladBarvinskyi323/Barvinskyi.universitu.FitnessTracker)
+- [Fork](https://github.com/VladBarvinskyi323/Baryliuk.University.OnlineBookClub)
