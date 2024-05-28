@@ -56,9 +56,16 @@ def a_book(request, id):
         print(f"image.url: {book.images.url}")
         image_url = book.images.url
 
-    return render(request, 'books/a_book.html',
-                  {'book': book, 'error':error, 'id':id,
-                   'image_url':image_url, 'action':action, 'interest_names':  interest_names})
+    context = {
+        'book': book,
+        'error': error,
+        'id': id,
+        'image_url': image_url,
+        'action': action,
+        'interest_names': interest_names
+    }
+
+    return render(request, 'books/a_book.html', context)
 
 
 from django.contrib.auth.decorators import login_required
