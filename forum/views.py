@@ -92,9 +92,15 @@ def edit(request, id):
     else:
         form = CreateInForum(instance=forum)
 
-    return render(request, 'forum/edit.html',
-                  {'form': form, 'error':error,'name':forum.name,
-                   'date_created':forum.date_created, 'id':id})
+    context = {
+        'form': form,
+        'error':error,
+        'name':forum.name,
+        'date_created':forum.date_created,
+        'id':id
+    }
+
+    return render(request, 'forum/edit.html',context)
 
 
 # add comments to forum
