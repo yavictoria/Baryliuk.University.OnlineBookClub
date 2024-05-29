@@ -117,4 +117,9 @@ Add your project documentation here.
 - [Project](https://github.com/VladBarvinskyi323/Barvinskyi.universitu.FitnessTracker)
 - [Fork](https://github.com/VladBarvinskyi323/Baryliuk.University.OnlineBookClub)
 
+## Anti-Lab 2
+- Name: Victoria Yatsiuk
+- Project: https://github.com/yavictoria/Yatsiuk.University.Pinterest
+- Fork: https://github.com/yavictoria/Baryliuk.University.OnlineBookClub
+
 
