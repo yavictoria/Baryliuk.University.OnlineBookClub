@@ -18,7 +18,10 @@ def welcome_email(request):
     message = f'Hi {username}, thank you for choosing our book club. Now you can be the part of a reading family! '
     from_email = settings.EMAIL_HOST_USER
     recipient_list = [email]
-    send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+    try:
+        send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+    except Exception as e:
+        messages.error(request, f"Error sending email: {e}")
     return redirect("main:home")
 
 
