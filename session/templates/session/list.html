@@ -1,0 +1,54 @@
+{% extends 'main/layout.html' %}
+
+
+{% block content %}
+<div class="row mb-3 ">
+    <div class="col-10">
+        <h1>Author Q&A sessions</h1>
+    </div>
+    {% if author == True %}
+    <div class="col-2">
+        <a href="{% url 'group:group_create'%}" class="btn btn-outline-success">Create session</a>
+    </div>
+    {% endif %}
+
+</div>
+{% if error %}
+<span class="alert alert-danger mt-2"> {{error}}</span>
+{% endif %}
+
+<div class="container col-10">
+    <div class="row justify-content-center">
+        {% for el in instance_list %}
+        <a href="{% url 'session:show' id=el.id %}" class="btn btn-outline-dark mt-3 mb-3">
+            <style>
+    .forum-item {
+        text-align: left;
+    }
+    .topic {
+        font-size: 24px; /* Adjust font size as needed */
+        font-weight: bold; /* Add bold font weight */
+    }
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name {
+        margin-right: 10px; /* Add right margin to separate from date */
+    }
+    .date {
+        font-style: italic; /* Add italic style to date */
+    }
+</style>
+            <div class="forum-item">
+                <p class="topic">{{ el.topic }}</p>
+                <div class="details">
+                    <p class="name">{{ el.author }}</p>
+                    <p class="date">{{ el.date_start }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

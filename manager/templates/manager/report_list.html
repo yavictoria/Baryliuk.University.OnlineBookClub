@@ -1,0 +1,58 @@
+{% extends 'main/layout.html' %}
+
+
+{% block content %}
+<div class="row mb-3 ">
+    <div class="col-10">
+        <h1>Reports</h1>
+    </div>
+
+</div>
+{% if error %}
+<span class="alert alert-danger mt-2"> {{error}}</span>
+{% endif %}
+
+<div class="container col-10">
+
+        {% for el in instance_list %}
+
+            <style>
+    .forum-item {
+        text-align: left;
+    }
+    .topic {
+        font-size: 30px; /* Adjust font size as needed */
+        font-weight: bold; /* Add bold font weight */
+    }
+    .details {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name {
+        margin-right: 10px; /* Add right margin to separate from date */
+    }
+</style>
+             <div class="card justify-content-center mt-4 mb-4">
+        <div class="card-header bg-dark bg-gradient text-white details">
+            <div class="col-9">
+                 <p class="name">{{ el.user_id }} about {{ el.topic }}</p>
+            </div>
+            <div class="col-3">
+                <p class="name">{{ el.date_created }}</p>
+            </div>
+        </div>
+        <div class="card-body position-relative">
+            <div>
+                <h6 class="card-text" style="margin-left: 20px;" for="discuss"> {{ el.report }} </h6>
+                <a href="{% url 'manager:report_delete' id=el.id %}" class="btn btn-outline-dark mt-3"
+                   style="margin-left: 20px;"> <i class="fa-regular fa-square-check"></i></a>
+            </div>
+        </div>
+    </div>
+        {% endfor %}
+
+
+</div>
+
+
+{% endblock %}
